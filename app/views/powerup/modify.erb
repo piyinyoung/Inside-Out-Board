@@ -1,0 +1,26 @@
+<body style = "background-color: #8DD8F8">
+        <h2 style = "color: #6AC2B5; fontsize:100px; text-align:center"> 
+     
+        </h2>
+        <div style="padding:10px;"> </div>
+                <div class="row">
+                <div class="col-xs-2 col-md-4"></div>
+                <div class="col-xs-8 col-md-4">
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        <form action="/powerup/updatem/<%= @postmodify.id %>" method="POST"><br>
+                        Name : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" value="<%=@postmodify.username %>" name="new_username"><br>
+                        <p> </p>
+                        
+                        Password : <input type="password" name="id_passwdm"><br>
+                        <p> </p>
+                        Content :&nbsp;&nbsp;&nbsp;&nbsp; <textarea name="new_content"> <%=@postmodify.content %></textarea><br>
+                 
+                        <input type="submit" value="edit">
+                        </form>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-xs-2 col-md-4"></div>
+                </div>
+    </body>

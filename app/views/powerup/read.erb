@@ -1,0 +1,149 @@
+ <div class="container">
+  <div class="row">
+  <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+  <br>
+ 
+ <ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="/"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>  익명 게시판</a></li>
+  <li role="presentation"><a href="#timeline"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 타임라인</a></li>
+ </ul>
+ 
+  <br>
+  <h2 id="timeline" style="margin-top:10px"
+
+
+ <span class= "" aria-hidden="true"> </span>  </a></h2>
+ <div class="panel panel-default">
+  <div class="panel-body">
+    
+    <p>  </p>
+    <img src="https://i0.wp.com/31.media.tumblr.com/c6f739e706c2221969cd1fee21f4ce46/tumblr_niwb3aa5yK1rf73xqo2_500.gif"  class style="width:100%;">
+    
+    <p> </p>
+    
+    <img src="http://static02.mediaite.com/themarysue/uploads/2015/05/Pixar-Post-Inside-Out-Joy-Cheers-Up-Sadness.png" class="img-responsive img-" alt="">
+    
+    <div class="btn-group" role="group">
+     
+     
+    </div>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-body">
+   
+    
+<center>
+
+<body style="background:url('http://sf.co.ua/13/02/wallpaper-53194.jpg')
+;background repeat: no-repeat; background-attachment : fix;
+background-size:100%;">
+<form action="/powerup/write" method="POST" enctype="multipart/form-data" >
+  <div class="input-group">
+    <span class="input-group-addon">이름</span>
+    <input type="text" name="author_name" class="form-control" required>
+    <span class="input-group-addon">비밀번호</span>
+    <input type="password" name="password" class="form-control" required>
+  </div>
+  <textarea class="form-control" name="content" rows="3" placeholder="오늘 하루 슬픔이에게 무슨일이 있었나요?" required></textarea>
+  <div style="margin-top:10px">
+  
+ <input type="file" name="image_file">
+  	 
+  
+  	<div style="width:25%;float:right;text-align:right;">
+  	
+  	 
+  	<button type="submit" class="btn btn-default"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 작성하기</button>
+  	
+  	
+  	</div>
+	</div>
+</form>
+       
+        <br>&nbsp;<br>&nbsp;<br>&nbsp;
+        
+
+<% @posts.reverse_each do |p|%>
+<div class="panel panel-default">
+ <div class="panel-heading">
+ 
+ <img src="<%=p.my_image.url%>">
+ <br>
+ 
+    <h3 class="panel-title"> <%=p.username %> </h3>
+  </div>
+  <div class="panel-body">
+  
+ <%=p.content %> 
+ 
+ 
+  </div>
+</div>
+        
+<a href="/powerup/delete/<%= p.id %>"> <button type="submit" class="btn btn-default">삭제 </button></a> 
+<a href="/powerup/modify/<%= p.id %>"> <button type="submit" class="btn btn-default">수정</button> </a>
+<br>&nbsp;<br>&nbsp;<br>&nbsp;
+<% end %>
+        
+      
+        
+   
+  </div>
+</div>
+<br>
+<script>
+$(function(){
+  $('#exampleModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget);
+    var id = button.data('id');
+    var modal = $(this);
+    modal.find('.modal-body input#id').val(id);
+    modal.find('.modal-body input#password').val("");
+  });
+});
+</script>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">삭제하시겠습니까?</h4>
+      </div>
+      <form action="/delete" method="POST">
+        <div class="modal-body">
+          <input type="hidden" id="id" name="id">
+          <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호를 입력해주세요" required>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+          <button type="submit" class="btn btn-danger">삭제하기</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&signed_in=true"></script>
+<script>
+function initialize() {
+  var input = /** @type {HTMLInputElement} */(
+      document.getElementById('pac-input'));
+  var autocomplete = new google.maps.places.Autocomplete(input);
+	google.maps.event.addListener(autocomplete, 'place_changed', function() {
+  var place = autocomplete.getPlace();
+  document.getElementById('pac-input').value = place.name;
+	});
+}google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+  </div>
+  </div>
+  </div>
+  
+  
+  
+ 
+        <embed src="http://player.bgmstore.net/s3d2k" autostart="true" width="0" height="0"> </embed>
+        
+  
+</center>
+ 

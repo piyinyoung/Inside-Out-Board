@@ -1,0 +1,28 @@
+<center>
+
+<br>
+
+
+<h1> 삭제합니다. </h1>
+
+
+
+<form action="/powerup/delete/<%= @dapost.id %>" method="POST"> 
+
+<input type="password" placeholder="비밀번호를 입력해주세요." required name="password_in"> 
+
+
+
+ <input type ="submit" value="전송버튼">
+</form>
+
+<br>
+
+<input type ="text" value= "<%= @message %>">
+<input type ="text" value= "<%= @bmessage %>">
+
+    
+    
+<a href="/">돌아가기 </a>
+
+</center>
